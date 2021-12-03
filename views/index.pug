@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  div.container
+    each pokemon in Pokemon
+      div.card(style= `border: 4px solid ${pokemon.cardBorder}; background-color: ${pokemon.cardColor}`)
+        div.header
+          div.name=pokemon.Name
+          div.hp=pokemon.HP
+          img.type(src=pokemon.type)
+        div.image
+          img.card-image(src=pokemon.image)(style=`border: 4px solid ${pokemon.cardBorder};`)
+        div.power-one
+          img.cost-one(src=pokemon.type)
+          div.power-one-name=pokemon.firstPower
+          div.power-one-damage=pokemon.firstDamage
+        div.power-two
+          div.cost-two
+            img.cost-two-one(src=pokemon.type)
+            img.cost-two-two(src=pokemon.secondaryCost)
+          div.power-two-name=pokemon.secondPower
+          div.power-two-damage=pokemon.secondDamage
+        div.info
+          div.weakness
+            p Weakness
+            img.weakness-energy(src=pokemon.weakness)
+          div.resistance
+            p Resistance
+            img.resistance-energy(src=pokemon.resistance)
+          div.retreat-cost
+            p Retreat Cost
+            div.retreat-cost-energy
+              img.retreat-cost-one(src=pokemon.retreatCost)
+              img.retreat-cost-two(src=pokemon.retreatCost)
+

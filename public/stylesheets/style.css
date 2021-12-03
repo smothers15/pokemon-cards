@@ -1,0 +1,174 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+}
+
+a {
+  color: #00B7FF;
+}
+
+.card{
+
+  border-radius: 16px;
+  width: 300px;
+
+  overflow: hidden;
+  margin: 10px;
+}
+
+.header{
+  display: flex;
+  padding-top: 8px;
+  padding-bottom: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  justify-content: space-between;
+
+}
+
+.image{
+ // padding: 10px;
+  //padding-left: 37px;
+  display: block;
+  margin-left: 20px;
+
+
+}
+
+.card-image{
+  width: 90%;
+  height: 180px;
+
+  border-radius: 0px;
+
+  box-shadow:
+          rgba(0, 0, 0, 0) 0 0 0 0,
+          rgba(0, 0, 0, 0) 0 0 0 0,
+          rgba(0, 0, 0, 0.1) 0 1px 3px 0,
+          rgba(0, 0, 0, 0.06) 0 1px 2px 0
+}
+
+.power-one{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 3px solid black;
+}
+
+.power-two{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 3px solid black;
+
+}
+
+img{
+
+}
+
+.cost-one{
+  //border-radius: 250px;
+  width: 30px;
+  height: 30px;
+}
+
+.cost-two-one{
+  //border-radius: 250px;
+  width: 30px;
+  height: 30px;
+}
+
+.cost-two-two{
+  //border-radius: 250px;
+  width: 30px;
+  height: 30px;
+}
+
+.type{
+  //border-radius: 250px;
+  width: 30px;
+  height: 30px;
+}
+
+.power-one-name{
+  //padding-top: 15px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.power-two-name{
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.hp{
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.name{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.power-one-damage{
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.power-two-damage{
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.info{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+
+}
+
+.weakness-energy{
+  width: 30px;
+  height: 30px;
+}
+
+.resistance-energy{
+  width: 30px;
+  height: 30px;
+}
+
+.retreat-cost-energy{
+  display:flex;
+}
+
+.retreat-cost-one{
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+}
+
+.retreat-cost-two{
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+}
+
+p{
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.container{
+  display: flex;
+
+}
+
+
+
+
