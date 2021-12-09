@@ -1,5 +1,15 @@
-module.exports.viewAll = function(req, res, next) {
-
+const {Pokemon} = require('../models');
+const types = ['Electric', 'Fire', 'Water', 'Steel', 'Psychic', 'Fighting', 'Colorless', 'Dark']
+module.exports.viewAll = async function(req, res, next) {
+    const pokemon = await Pokemon.findAll();
+    //console.log(pokemon);
+    res.render('index', {pokemon});
+/*module.exports.renderEditForm = async function() {
+    const pokemon = await Pokemon.findByPk(
+        req.params.id
+    );
+    res.render('edit', {pokemon});
+}
     const Pokemon = [{
         id: 1,
         Name: 'Pikachu',
@@ -50,6 +60,37 @@ module.exports.viewAll = function(req, res, next) {
         retreatCost: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/aba1a756-d955-43f6-a2e9-5b7d60406854/d50w4gu-bcf44127-7bc3-468d-b148-1af8cf4e7ac0.png/v1/fill/w_720,h_720,strp/colorless_energy_by_humac1_d50w4gu-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvYWJhMWE3NTYtZDk1NS00M2Y2LWEyZTktNWI3ZDYwNDA2ODU0XC9kNTB3NGd1LWJjZjQ0MTI3LTdiYzMtNDY4ZC1iMTQ4LTFhZjhjZjRlN2FjMC5wbmciLCJ3aWR0aCI6Ijw9NzIwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.I2hRnHXhqZrAh05uX4UyxVC8C-iVQrj00LWU7nvS9C8',
         cardColor: '#8ebe56',
         cardBorder: '#ffd500'
-    }];
-    res.render('index', {Pokemon});
-}
+    }];*/
+
+};
+
+module.exports.renderEditForm = async function(req, res, next) {
+    const pokemon = await Pokemon.findByPk(
+        req.params.id
+    );
+    res.render('edit', {pokemon});
+};
+
+module.exports.updateCard = async function(res, req, next) {
+    await Pokemon.update(
+        {
+            name: req.body.name,
+            type: req.body.type,
+            hp: req.body.hp
+        },
+        {
+            where:{
+                id: req.params.id
+            }
+        });
+
+    res.redirect('/');
+};
+
+module.exports.renderAddForm = async function(res, req) {
+    const pokemon = {
+        name: "",
+        type: ""
+    };
+    res.render('add', {pokemon});
+};

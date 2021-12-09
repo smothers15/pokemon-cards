@@ -1,31 +1,33 @@
-mixin pokemonCard(pokemon)
-
-    div.card(style= `border: 4px solid ${pokemon.cardBorder}; background-color: ${pokemon.cardColor}`)
-        div.header
-            div.name=pokemon.Name
-            div.hp=pokemon.HP
-            img.type(src=pokemon.type)
-        div.image
-            img.card-image(src=pokemon.image)(style=`border: 4px solid ${pokemon.cardBorder};`)
-        div.power-one
-            img.cost-one(src=pokemon.type)
-            div.power-one-name=pokemon.firstPower
-            div.power-one-damage=pokemon.firstDamage
-        div.power-two
-            div.cost-two
-                img.cost-two-one(src=pokemon.type)
-                img.cost-two-two(src=pokemon.secondaryCost)
-            div.power-two-name=pokemon.secondPower
-            div.power-two-damage=pokemon.secondDamage
-        div.info
-            div.weakness
-                p Weakness
-                img.weakness-energy(src=pokemon.weakness)
-            div.resistance
-                p Resistance
-                img.resistance-energy(src=pokemon.resistance)
-            div.retreat-cost
-                p Retreat Cost
-                div.retreat-cost-energy
-                    img.retreat-cost-one(src=pokemon.retreatCost)
-                    img.retreat-cost-two(src=pokemon.retreatCost)
+mixin pokemonCard(Pokemon)
+    div.edit-container
+        div.edit
+            a(href=`/edit/${Pokemon.id}`) Edit
+        div.card(style= `border: 4px solid #ffd500; background-color: ${Pokemon.card_color}`)
+            div.header
+                div.name=Pokemon.name
+                div.hp=Pokemon.hp
+                img.type(src=Pokemon.type)
+            div.image
+                img.card-image(src=Pokemon.image)(style='border: 4px solid #ffd500;')
+            div.power-one
+                img.cost-one(src=Pokemon.type)
+                div.power-one-name=Pokemon.first_power
+                div.power-one-damage=Pokemon.first_damage
+            div.power-two
+                div.cost-two
+                    img.cost-two-one(src=Pokemon.type)
+                    img.cost-two-two(src=Pokemon.secondary_cost)
+                div.power-two-name=Pokemon.second_power
+                div.power-two-damage=Pokemon.second_damage
+            div.info
+                div.weakness
+                    p Weakness
+                    img.weakness-energy(src=Pokemon.weakness)
+                div.resistance
+                    p Resistance
+                    img.resistance-energy(src=Pokemon.resistance)
+                div.retreat-cost
+                    p Retreat Cost
+                    div.retreat-cost-energy
+                        img.retreat-cost-one(src=Pokemon.retreat_cost)
+                        img.retreat-cost-two(src=Pokemon.retreat_cost)
