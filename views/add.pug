@@ -8,17 +8,40 @@ block content
                     label(for='name') Name:
                     input(type='text' id='name' name='name' value=pokemon.name)
                 div.form-input
-                    label(for="type") Type
-                        br
-                        select(name="type" id="type")
-                            option(value="Electric") Electric
-                            option(value="Grass") Grass
-                            option(value="Water") Water
-                            option(value="Fire") Fire
-                            option(value="Steel") Steel
-                            option(value="Fighting") Fighting
-                            option(value="Psychic") Psychic
+                    label(for='type') Type:
+                    input(type='text' id='type' name='type' value=pokemon.type)
+                div.form-input
+                    label(for="hp") HP:
+                    input(type='text' id='hp' name='hp' value=pokemon.hp)
+                br
+                div.form-input
+                    label(for="first_power") Power One:
+                    input(type='text' id='first_power' name='first_power' value=pokemon.first_power)
+                div.form-input
+                    label(for='first_damage') Damage:
+                    input(type='text' id='first_damage' name='first_damage' value=pokemon.first_damage)
 
-                div.button-row
-                    a.button.cancel(href='/') Cancel
-                    button.button.save(type='submit') Submit
+                br
+                div.form-input
+                    label(for="second_power") Power Two:
+                    input(type='text' id='second_power' name='second_power' value=pokemon.second_power)
+                div.form-input
+                    label(for='second_damage') Damage:
+                    input(type='text' id='second_damage' name='second_damage' value=pokemon.second_damage)
+
+                div.form-input
+                    label(for='secondary_cost') Second Attack Energy:
+                    input(type='text' id='secondary_cost' name='secondary_cost' value=pokemon.secondary_cost)
+                br
+                div.form-input
+                    label(for='weakness') Weakness:
+                    input(type='text' id='weakness' name='weakness' value=pokemon.weakness)
+                div.form-input
+                    label(for='resistance') Resistance:
+                    input(type='text' id='resistance' name='resistance' value=pokemon.resistance)
+                div.form-input
+                    label(for='retreat_cost') Retreat Cost:
+                    input(type='text' id='retreat_cost' name='retreat_cost' value=pokemon.retreat_cost)
+                    div.button-row
+                        a.button.cancel(href='/') Cancel
+                        button.button.save(type='submit') Submit

@@ -12,8 +12,17 @@ a {
   padding-left: 10px;
 }
 
+.edit-header{
+  font-size: 18px;
+  justify-content: space-around;
+}
+
 .container{
   flex-wrap: wrap;
+}
+
+.add-button-row{
+  padding: 15px;
 }
 
 .card{

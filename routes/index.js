@@ -6,6 +6,7 @@ const cardController = require('../controllers/cardController');
 router.get('/', cardController.viewAll);
 router.get('/edit/:id', cardController.renderEditForm);
 router.post('/edit/:id', cardController.updateCard);
-//router.get('/add', cardController.renderAddForm);
+router.get('/add', cardController.renderAddForm);
+router.post('/add', cardController.addPokemon);
 
 module.exports = router;
