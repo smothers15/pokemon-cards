@@ -22,7 +22,7 @@ module.exports.updateCard = async function(res, req, next) {
     await Pokemon.update(
         {
             name: req.body.name,
-            type: getSymbol(req.body.type),
+            type: req.body.type,
             hp: req.body.hp,
             first_power: req.body.first_power,
             first_damage: req.body.first_damage,
@@ -30,10 +30,10 @@ module.exports.updateCard = async function(res, req, next) {
             second_power: req.body.second_power,
 
             second_damage: req.body.second_damage,
-            secondary_cost: getSymbol(req.body.secondary_cost),
-            weakness: getSymbol(req.body.weakness),
-            resistance: getSymbol(req.body.resistance),
-            retreat_cost: getSymbol(req.body.retreat_cost)
+            secondary_cost: req.body.secondary_cost,
+            weakness: req.body.weakness,
+            resistance: req.body.resistance,
+            retreat_cost: req.body.retreat_cost
         },
         {
             where:{
