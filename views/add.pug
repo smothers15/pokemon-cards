@@ -5,8 +5,14 @@ block content
         div.edit-header Add Pokemon Card
             form(action='/add' method='post')
                 div.form-input
+                    label(for='id') Id:
+                    input(type='text' id='id' name='id' value=pokemon.id)
+                div.form-input
                     label(for='name') Name:
                     input(type='text' id='name' name='name' value=pokemon.name)
+                div.form-input
+                    label(for='image') Image:
+                    input(type='text' id='image' name='image' value=pokemon.image)
                 div.form-input
                     label(for='type') Type:
                     input(type='text' id='type' name='type' value=pokemon.type)
@@ -42,6 +48,9 @@ block content
                 div.form-input
                     label(for='retreat_cost') Retreat Cost:
                     input(type='text' id='retreat_cost' name='retreat_cost' value=pokemon.retreat_cost)
+                div.form-input
+                    label(for='card_color') Card Color:
+                    input(type='text' id='card_color' name='card_color' value=pokemon.card_color)
                     div.button-row
                         a.button.cancel(href='/') Cancel
                         button.button.save(type='submit') Submit

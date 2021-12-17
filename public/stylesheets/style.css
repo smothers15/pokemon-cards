@@ -17,6 +17,10 @@ a {
   justify-content: space-around;
 }
 
+a{
+  padding: 6px;
+}
+
 .container{
   flex-wrap: wrap;
 }

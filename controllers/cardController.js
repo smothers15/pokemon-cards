@@ -18,7 +18,16 @@ module.exports.renderEditForm = async function(req, res, next) {
     res.render('edit', {pokemon});
 };
 
-module.exports.updateCard = async function(res, req, next) {
+module.exports.deletePokemon = async function(req, res){
+  await Pokemon.destroy({
+      where:{
+          id: req.params.id
+      }
+  });
+  res.redirect('/');
+};
+
+module.exports.updateCard = async function(req, res, next) {
     await Pokemon.update(
         {
             name: req.body.name,
@@ -57,27 +66,29 @@ module.exports.renderAddForm = function(req, res) {
         secondary_cost: "",
         weakness: "",
         resistance: "",
-        retreat_cost: ""
-
+        retreat_cost: "",
+        card_color: ""
     };
     res.render('add', {pokemon});
 };
 
-module.exports.addPokemon = async function(res, req) {
+module.exports.addPokemon = async function(req, res) {
     await Pokemon.create({
+        id: req.body.id,
         name: req.body.name,
-        type: getSymbol(req.body.type),
+        type: req.body.type,
         hp: req.body.hp,
         first_power: req.body.first_power,
         first_damage: req.body.first_damage,
-
+        image: req.body.image,
         second_power: req.body.second_power,
 
         second_damage: req.body.second_damage,
-        secondary_cost: getSymbol(req.body.secondary_cost),
-        weakness: getSymbol(req.body.weakness),
-        resistance: getSymbol(req.body.resistance),
-        retreat_cost: getSymbol(req.body.retreat_cost)
+        secondary_cost: req.body.secondary_cost,
+        weakness: req.body.weakness,
+        resistance: req.body.resistance,
+        retreat_cost: req.body.retreat_cost,
+        card_color: req.body.card_color
     });
     res.redirect('/');
 };

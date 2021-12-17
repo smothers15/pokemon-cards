@@ -8,5 +8,6 @@ router.get('/edit/:id', cardController.renderEditForm);
 router.post('/edit/:id', cardController.updateCard);
 router.get('/add', cardController.renderAddForm);
 router.post('/add', cardController.addPokemon);
+router.get('/delete/:id', cardController.deletePokemon);
 
 module.exports = router;
